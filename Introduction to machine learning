@@ -1,0 +1,47 @@
+Classification trees:
+
+How do we choose the split? 
+$\leftarrow$ Look at the feature that separate negative and positive examples (compute the entropy of the split = how much it is mixed ~ information gain).
+
+Random forest is a multitude of decision trees. The output of the random forest is the class predicted by the forest (by majority or average).
+
+$\underline{Underfitting:}$
+
+- if depth is not enough
+- if there are no enough trees (classification is innacurate)
+
+$\underline{Overfitting:}$
+
+- depth is too elevated (generalization not performed well, tries to fit even outliers)
+
+
+\section{Performance measures of a regression model}
+
+\subsection{MSE}
+$$
+MSE = \frac{1}{N}\sum_{1}{N} (h_{\theta} x^i - y^i)
+$$
+
+RSE: divided by the sd of the target (sum (y^i- <y^i>)^2)
+
+Root MSE 
+
+\section{Performance measures for classification model}
+Sensitivity = True Positive rate
+
+Precision = Positive predicted value
+
+Specificity = True Negative rate
+
+F1-SCORE = 2*(PPV * TPR)/(PPV+TPR)
+
+\section{To construct the ROC curve}
+1. model predictions
+2. TPR & FPR
+3. Plot(TPR, FPR) for every cut-off
+
+The goal is to maximize the area below the curve and then choose the model that maximizes it.
+
+Only splitting the data 0.8 and 0.2, makes the evaluation a bit "innacurate", since we only evaluate on the testing dataset that we decided when we splitted the data.
+
+Solution: $\rightarrow$ by doing a K-fold cross validation, we can repeat the evalutation on many "shuffled" dataset, maing the evaluation more accurate and less biased.
