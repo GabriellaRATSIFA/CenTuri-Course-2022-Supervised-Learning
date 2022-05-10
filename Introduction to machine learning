@@ -44,4 +44,12 @@ The goal is to maximize the area below the curve and then choose the model that 
 
 Only splitting the data 0.8 and 0.2, makes the evaluation a bit "innacurate", since we only evaluate on the testing dataset that we decided when we splitted the data.
 
-Solution: $\rightarrow$ by doing a K-fold cross validation, we can repeat the evalutation on many "shuffled" dataset, maing the evaluation more accurate and less biased.
+Solution: $\rightarrow$ by doing a K-fold cross validation, we can repeat the evalutation on many "shuffled" dataset, maing the evaluation more accurate and less biased. 
+- split the dataset in train and test, and set one hyperparameter
+- in the training dataset, train on the 9 subsets (out of 10) and test the model with the 10th this certain hyperparameter.
+- compute the accuracy
+
+- Repeat the procedure 10 times, by choosing a different subset in the training dataset, and computing the accuracy with 9/10
+
+- (the final evaluation is the average of the model performance on the testing dataset calculated accross the different trials)
+
